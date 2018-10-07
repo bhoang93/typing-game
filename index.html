@@ -1,0 +1,25 @@
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Typing Game</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
+    </head>
+    <body>
+      <h1>Typing Game</h1>
+      <p>Type the word below in <span id="seconds">5</span> seconds.</p>
+      <h2 id="current-word">WORD</h2>
+      <input type="text" id="word-input" placeholder="Type the word here..." autofocus></input>
+      <h3 id="message">Start typing!</h3>
+      <hr>
+      <p>Time left: <span id="time">5</span></p>
+      <p>Score: <span id="score">0</span></p>
+      <p>High Score: <span id="high-score">0</span></p>
+      <hr>
+        <button id="easy-button">Easy</button>
+        <button id="normal-button">Normal</button>
+        <button id="hard-button">Hard</button>
+              <script src="typinggame.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+  font-family: 'K2D', sans-serif;
+  background-color: Moccasin;
+}
+
+hr {
+  width: 60%;
+  background-color: black;
+  border: 0;
+  height: 1px;
+}
+
+#seconds {
+  color: forestgreen;
+}
+
+#word-input {
+  width: 30%;
+  height: 30px;
+  font-size: 20px;
+}
+
+button {
+  cursor: pointer;
+}
