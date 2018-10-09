@@ -1,4 +1,4 @@
-window.addEventListener("load", init);
+window.addEventListener("load", loadWords);
 
 const difficulty = { easy: 5, normal: 3, hard: 2 };
 
@@ -20,36 +20,17 @@ const easyButton = document.querySelector("#easy-button");
 const normalButton = document.querySelector("#normal-button");
 const hardButton = document.querySelector("#hard-button");
 
-const words = [
-  "hat",
-  "river",
-  "lucky",
-  "statue",
-  "generate",
-  "stubborn",
-  "cocktail",
-  "runaway",
-  "joke",
-  "developer",
-  "establishment",
-  "hero",
-  "javascript",
-  "nutrition",
-  "revolver",
-  "echo",
-  "siblings",
-  "investigate",
-  "horrendous",
-  "symptom",
-  "laughter",
-  "magic",
-  "master",
-  "space",
-  "definition"
-];
+let wordsArray = [];
+
+function loadWords() {
+  fetch("https://api.myjson.com/bins/8avto")
+    .then(data => data.json())
+    .then(object => (wordsArray = object.words))
+    .then(() => init());
+}
 
 function init() {
-  showWord(words);
+  showWord(wordsArray);
   wordInput.addEventListener("input", startMatch);
   easyButton.addEventListener("click", () => setDifficulty(0));
   normalButton.addEventListener("click", () => setDifficulty(1));
@@ -80,7 +61,7 @@ const startMatch = () => {
   if (matchWords()) {
     isPlaying = true;
     time = mode + 1;
-    showWord(words);
+    showWord(wordsArray);
     wordInput.value = "";
     score = score + (6 - mode);
     if (highScore < score) {
@@ -105,9 +86,31 @@ const matchWords = () => {
   }
 };
 
+const getRandomIndex = array => {
+  return Math.floor(Math.random() * array.length);
+};
+
 const showWord = words => {
-  const randomIndex = Math.floor(Math.random() * words.length);
-  currentWord.innerHTML = words[randomIndex];
+  let randomIndex = getRandomIndex(words);
+  let wordMin = 0;
+  let newWord = "";
+
+  // if (mode === difficulty.hard) {
+  //   wordMin = 6;
+  // } else if (mode === difficulty.normal) {
+  //   wordMin = 4;
+  // }
+  //
+  // if (mode !== difficulty.easy) {
+  //   do {
+  //     randomIndex = getRandomIndex(words);
+  //     newWord = words[randomIndex];
+  //   } while (newWord.length < 4);
+  // } else {
+  newWord = words[randomIndex];
+  // }
+
+  currentWord.innerHTML = newWord;
 };
 
 const countdown = () => {

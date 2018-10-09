@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font-family: 'K2D', sans-serif;
-  background-color: Moccasin;
+  background-color: gainsboro;
 }
 
 hr {
@@ -19,8 +19,46 @@ hr {
   width: 30%;
   height: 30px;
   font-size: 20px;
+  border: none;
+  padding: 5px 0px 5px 10px;
+}
+
+h1 {
+  font-size: 2.7vw;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 2.5vw;
+  margin: 0px;
+  margin-bottom: 20px;
 }
 
 button {
   cursor: pointer;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  color: white;
+}
+
+#easy-button {
+  background-color: deepskyblue;
+}
+
+#normal-button {
+  background-color: dodgerblue;
+}
+
+#hard-button {
+  background-color: royalblue;
+}
+
+#instructions {
+  width: 30%;
+  margin: auto;
+  margin-top: 10px;
+  text-align: left;
+  background-color: lightgrey;
+  padding: 3px 10px 5px 10px;
+  border-radius: 10px;
 }

@@ -9,7 +9,7 @@
     <body>
       <h1>Typing Game</h1>
       <p>Type the word below in <span id="seconds">5</span> seconds.</p>
-      <h2 id="current-word">WORD</h2>
+      <h2 id="current-word">Loading...</h2>
       <input type="text" id="word-input" placeholder="Type the word here..." autofocus></input>
       <h3 id="message">Start typing!</h3>
       <hr>
@@ -20,6 +20,18 @@
         <button id="easy-button">Easy</button>
         <button id="normal-button">Normal</button>
         <button id="hard-button">Hard</button>
-              <script src="typinggame.js"></script>
+
+        <div id="instructions">
+        <h3>Instructions</h3>
+        <ul>
+          <li>Type the word in the time allotted time.</li>
+          <li>If you run out of time, type the next word in over to start again.</li>
+          <li>You can set the difficulty by clicking the buttons above.</li>
+          <li>You will have less time to type but are awarded more points per word.</li>
+        </ul>
+      </div>
+
+
+      <script src="typinggame.js"></script>
     </body>
   </html>
